@@ -1,7 +1,7 @@
 '''from load_data import load_data'''
 import numpy as np
 '''import seaborn as sns'''
-import matplotlib.pyplot as plt
+'''import matplotlib.pyplot as plt'''
 def data_analysis():
     '''data = load_data()'''
     features_na = [features for features in data.columns if data[features].isnull().sum() > 0]
@@ -24,9 +24,9 @@ def data_analysis():
     #visualize the numerical variables
     print(data[numerical_features].head())
     #finding outliers in numerical features
-    plt.figure(figsize=(20,40), facecolor='white')
+    '''plt.figure(figsize=(20,40), facecolor='white')
     plotnumber=1
-    '''for numerical_feature in numerical_features:
+    for numerical_feature in numerical_features:
         ax = plt.subplot(12,3,plotnumber)
         sns.boxplot(data[numerical_feature])
         plt.xlabel(numerical_feature)
