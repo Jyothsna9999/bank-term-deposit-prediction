@@ -1,6 +1,6 @@
 '''from load_data import load_data'''
 import numpy as np
-import seaborn as sns
+'''import seaborn as sns'''
 import matplotlib.pyplot as plt
 def data_analysis():
     '''data = load_data()'''
@@ -26,7 +26,7 @@ def data_analysis():
     #finding outliers in numerical features
     plt.figure(figsize=(20,40), facecolor='white')
     plotnumber=1
-    for numerical_feature in numerical_features:
+    '''for numerical_feature in numerical_features:
         ax = plt.subplot(12,3,plotnumber)
         sns.boxplot(data[numerical_feature])
         plt.xlabel(numerical_feature)
@@ -34,7 +34,7 @@ def data_analysis():
     plt.show()
     cor_mat = data.corr()
     fig = plt.figure(figsize=(15,7))
-    sns.heatmap(cor_mat,annot=True)
+    sns.heatmap(cor_mat,annot=True)'''
     print(data['y'].groupby(data['y']).count())
     y_no_count, y_yes_count =data['y'].value_counts()
     y_yes = data[data['y'] == 'yes']
