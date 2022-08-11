@@ -35,7 +35,7 @@ def data_analysis():
     cor_mat = data.corr()
     fig = plt.figure(figsize=(15,7))
     sns.heatmap(cor_mat,annot=True)
-     print(data['y'].groupby(data['y']).count())
+    print(data['y'].groupby(data['y']).count())
     y_no_count, y_yes_count =data['y'].value_counts()
     y_yes = data[data['y'] == 'yes']
     y_no = data[data['y'] == 'no']
