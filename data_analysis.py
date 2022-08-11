@@ -35,5 +35,13 @@ def data_analysis():
     cor_mat = data.corr()
     fig = plt.figure(figsize=(15,7))
     sns.heatmap(cor_mat,annot=True)
+     print(data['y'].groupby(data['y']).count())
+    y_no_count, y_yes_count =data['y'].value_counts()
+    y_yes = data[data['y'] == 'yes']
+    y_no = data[data['y'] == 'no']
+    y_yes_over = y_yes.sample(y_no_count,replace=True)
+    df_balanced = pd.concat([y_yes_over,y_no], axis=0)
+    print(df_balanced['y'].groupby(df_balanced['y']).count())
     
+
 data_analysis()
