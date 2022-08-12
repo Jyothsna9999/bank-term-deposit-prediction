@@ -4,6 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from data_preprocess import data_preprocess
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 import pandas as pd
 def model_selection():
     data = pd.read_csv('balanced_data.csv')
