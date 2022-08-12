@@ -1,8 +1,7 @@
-from load_data import load_data
 import numpy as np
 import pandas as pd
 def feature_engineering():
-    data = load_data()
+    data = pd.read_csv('bank.csv')
     y_no_count, y_yes_count =data['y'].value_counts()
     y_yes = data[data['y'] == 'yes']
     y_no = data[data['y'] == 'no']
