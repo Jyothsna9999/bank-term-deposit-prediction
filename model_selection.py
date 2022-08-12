@@ -4,8 +4,12 @@ from sklearn.linear_model import LogisticRegression
 from data_preprocess import data_preprocess
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
+import pandas as pd
 def model_selection():
-    X_train, y_train, X_test, y_test = data_preprocess() 
+    data = pd.read_csv('balanced_data.csv')
+    X = data.drop(['y_new'],axis=1)
+    y = data['y_new']
+    X_train, y_train, X_test, y_test = train_test_split(X,y,test_size=0.2, random_state=0) 
     dt = DecisionTreeClassifier()
     dt.fit(X_train, y_train)
     print(dt.score(X_test, y_test))
