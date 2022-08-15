@@ -29,7 +29,7 @@ pipeline{
         }
         stage("data_preprocess"){
             steps{
-                sh 'python3 data_proprecess.py'
+                sh 'python3 data_proprocess.py'
             }
         }
         stage("model_selection"){
